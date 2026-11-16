@@ -677,7 +677,8 @@ Because of its ability to learn from errors, XGBoost often produces highly accur
         xgb_start = time.time()
 
         # Initialize model
-        xgb = XGBRegressor(n_estimators=100, max_depth = 4, learning_rate = 0.1, random_state=42)
+        xgb = XGBRegressor(n_estimators=300, max_depth = 6, learning_rate = 0.05, subsample = 0.8, min_child_weight = 3,
+                           colsample_bytree = 0.8, random_state=42)
 
         # Fit model
         xgb.fit(X_train, y_train)
