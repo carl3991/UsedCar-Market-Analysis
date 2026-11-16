@@ -67,7 +67,6 @@ if navigation == "Home":
   
     st.image("dealership.jpg", width = 870)
 
-
     st.divider()
     
     st.subheader("Project Description")
