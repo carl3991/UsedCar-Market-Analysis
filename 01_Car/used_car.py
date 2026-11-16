@@ -6,7 +6,7 @@ import time
 import streamlit as st
 import plotly.express as px
 import scipy.stats as stats
-
+import statsmodels.api as sm
 
 from datetime import datetime
 
@@ -433,7 +433,6 @@ The model provides a straightforward way to understand how different vehicle cha
         st.subheader("Coefficient Table")
 
         # create OLS table summary
-        import statsmodels.api as sm
         X_ols = sm.add_constant(X)
         ols_model = sm.OLS(y, X_ols).fit()
 
