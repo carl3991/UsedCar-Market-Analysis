@@ -65,7 +65,7 @@ if navigation == "Home":
 
     st.title("Welcome!")
   
-    st.image("dealership.jpg", width = 870)
+    st.image("https://raw.githubusercontent.com/carl3991/UsedCar-Market-Analysis/main/01_Car/dealership.jpg", width = 870)
 
     st.divider()
     
