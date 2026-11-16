@@ -65,7 +65,7 @@ if navigation == "Home":
 
     st.title("Welcome!")
   
-    st.image("images/dealership.jpg", width = 870)
+    st.image("dealership.jpg", width = 870)
 
 
     st.divider()
