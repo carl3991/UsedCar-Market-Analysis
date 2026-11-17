@@ -292,9 +292,7 @@ elif navigation == "Exploratory Analysis":
         st.subheader("Price Distribution by Fuel Type and Transmission")
         fig_box = px.box(df, x = "fuelType", y ="price", color='transmission')
         fig_box.update_layout(xaxis_title = "Fuel Type" , yaxis_title = "Price ($)", legend = dict(
-            title = "Transmission",
-            font = dict(color="black"),
-            title_font = dict(color="black")
+            title = "Transmission"
         ))
 
 
