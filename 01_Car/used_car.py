@@ -606,7 +606,8 @@ The model provides a straightforward way to understand how different vehicle cha
                                    color = "Importance", color_continuous_scale= px.colors.sequential.Blues)
         feat_imp_rf.update_layout(title_x = 0.4
                     ),
-                    hoverlabel= dict(bgcolor="white", font_color="black")) # custom tooltip 
+                    hoverlabel= dict(bgcolor="white", font_color="black") # custom tooltip 
+        
         feat_imp_rf.update_traces(marker_line_color = "black", marker_line_width = 1.2, 
                                        hovertemplate = "<b>%{y}</b><br>" +
                                        "Importance Score: <b>%{x:,.2f}</b>")
