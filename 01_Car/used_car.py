@@ -238,7 +238,7 @@ elif navigation == "Exploratory Analysis":
         #histogram
         st.subheader("Price Distribution")
         fig_hist = px.histogram(x=df['price'],nbins=50, title="" )
-        fig_hist.update_layout(xaxis_title = "Price ($)", yaxis_title = "Frequency", hoverlabel = dict(font_color="black", bgcolor="white) )
+        fig_hist.update_layout(xaxis_title = "Price ($)", yaxis_title = "Frequency", hoverlabel = dict(font_color="black", bgcolor="white") )
         fig_hist.update_traces(marker_line_color = "black", marker_line_width = 2,
                                hovertemplate = "<b> Price Distribution</b> <br>" +
                                "# of cars: <b> %{y}</b><br>" +
