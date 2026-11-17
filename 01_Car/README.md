@@ -1,7 +1,10 @@
 # **Used Car Analytics & Price Prediction Dashboard**
 
+<hr></hr>
 
 🔗 Live Dashboard: https://usedcar-market-analysis-jnnom72cyjjmvfyejk37mf.streamlit.app/
+
+<br>
 
 ### Project Overview
 
