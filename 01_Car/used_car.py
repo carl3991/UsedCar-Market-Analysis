@@ -238,7 +238,7 @@ elif navigation == "Exploratory Analysis":
         #histogram
         st.subheader("Price Distribution")
         fig_hist = px.histogram(x=df['price'],nbins=50, title="" )
-        fig_hist.update_layout(xaxis_title = "Price ($)", yaxis_title = "Frequency", hoverlabel = dict(font_color="black") )
+        fig_hist.update_layout(xaxis_title = "Price ($)", yaxis_title = "Frequency", hoverlabel = dict(font_color="black", bgcolor="white) )
         fig_hist.update_traces(marker_line_color = "black", marker_line_width = 2,
                                hovertemplate = "<b> Price Distribution</b> <br>" +
                                "# of cars: <b> %{y}</b><br>" +
@@ -256,7 +256,7 @@ elif navigation == "Exploratory Analysis":
         #plot correlation matrix
         fig_corr = px.imshow(corr, text_auto= ".2f", color_continuous_scale= "Greys", aspect = "auto")
         fig_corr.update_layout(height=600, width=900, hoverlabel = dict(
-            font_color = "black"
+            font_color = "black", bgcolor="white"
         ))
   
         fig_corr.update_traces(hovertemplate = "%{y} vs. %{x} <br>" + 
@@ -273,7 +273,7 @@ elif navigation == "Exploratory Analysis":
 
         fig_scatter.update_layout(
             xaxis_title="Mileage",
-            yaxis_title="Price ($)", hoverlabel = dict(font_color="black"), legend = dict(
+            yaxis_title="Price ($)", hoverlabel = dict(font_color="black", bgcolor= "white"), legend = dict(
                 title = "Fuel Type"
             )
         )
