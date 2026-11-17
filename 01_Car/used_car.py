@@ -147,8 +147,7 @@ elif navigation == "Exploratory Analysis":
                                                     font_color = "black" # custom tooltip font and background color
                                                 ), hovermode = "x unified")
         
-        fig_trend.update_yaxes( title_font = dict(color="black"), tickfont = dict(color="black"), tickprefix="$")
-        fig_trend.update_xaxes(title_font = dict(color="black"), tickfont= dict(color="black"))
+        fig_trend.update_yaxes(tickprefix="$")
         
         fig_trend.update_traces(line = dict(color="red", width=3), hovertemplate = "<b>%{x}</b><br>"+
                                         "Average Price: <b>$%{y:,.2f}</b>" +
@@ -171,14 +170,12 @@ elif navigation == "Exploratory Analysis":
                                             bgcolor = "white",
                                             font_color = "black" # custom tooltip font and background color
                                         ), coloraxis_colorbar = dict(
-                                            title = "Price ($)",
-                                            title_font = dict(color="black"),
-                                            tickfont = dict(color="black")
+                                            title = "Price ($)"
                                         ))
 
         fig_model.update_yaxes(# Force yaxis to go ascending
-            categoryorder="total ascending", title_font = dict(color="black"), tickfont = dict(color="black"))
-        fig_model.update_xaxes(title_font = dict(color="black"), tickfont= dict(color="black"), tickprefix = "$" )
+            categoryorder="total ascending")
+        fig_model.update_xaxes(tickprefix = "$" )
         
         fig_model.update_traces(marker_line_color= "black", marker_line_width =1.2, hovertemplate = "<b>%{y}</b> <br>"+ 
                                 "Price: <b>$%{x:,.02f}</b>" +
@@ -201,14 +198,10 @@ elif navigation == "Exploratory Analysis":
                                                     bgcolor = "white",
                                                     font_color = "black" # custom tooltip font and background color
                                                 ), coloraxis_colorbar = dict(
-                                                    title = "Price ($)",
-                                                    title_font = dict(color="black"),
-                                                    tickfont = dict(color="black")
+                                                    title = "Price ($)"
                                                 ))
         
-        fig_transmission.update_yaxes( title_font = dict(color="black"), tickfont = dict(color="black"), tickprefix="$")
-        fig_transmission.update_xaxes(title_font = dict(color="black"), tickfont= dict(color="black"))
-                
+        fig_transmission.update_yaxes( tickprefix="$")                
         fig_transmission.update_traces(marker_line_color= "black", marker_line_width =1.2, hovertemplate = "<b>%{x}</b> <br>"+ 
                                         "Price: <b>$%{y:,.02f}</b>" +
                                         "<extra></extra>")
@@ -230,14 +223,10 @@ elif navigation == "Exploratory Analysis":
                                                             bgcolor = "white",
                                                             font_color = "black" # custom tooltip font and background color
                                                         ), coloraxis_colorbar = dict(
-                                                            title = "Price ($)",
-                                                            title_font = dict(color="black"),
-                                                            tickfont = dict(color="black")
+                                                            title = "Price ($)"
                                                         ))
                 
-        fig_fuel.update_yaxes( title_font = dict(color="black"), tickfont = dict(color="black"), tickprefix = "$")
-        fig_fuel.update_xaxes(title_font = dict(color="black"), tickfont= dict(color="black"))
-                        
+        fig_fuel.update_yaxes(tickprefix = "$")                        
         fig_fuel.update_traces(marker_line_color= "black", marker_line_width =1.2, hovertemplate = "<b>%{x}</b> <br>"+ 
                                                 "Price: <b>$%{y:,.02f}</b>" +
                                                 "<extra></extra>")
@@ -254,8 +243,6 @@ elif navigation == "Exploratory Analysis":
                                hovertemplate = "<b> Price Distribution</b> <br>" +
                                "# of cars: <b> %{y}</b><br>" +
                                "Price Bin: <b> $%{x}</b>")
-        fig_hist.update_xaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
-        fig_hist.update_yaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
 
         st.plotly_chart(fig_hist, use_container_width=True)
 
@@ -271,8 +258,7 @@ elif navigation == "Exploratory Analysis":
         fig_corr.update_layout(height=600, width=900, hoverlabel = dict(
             font_color = "black"
         ))
-        fig_corr.update_xaxes(tickfont = dict(color="black"))
-        fig_corr.update_yaxes(tickfont  = dict(color="black"))
+  
         fig_corr.update_traces(hovertemplate = "%{y} vs. %{x} <br>" + 
                                "Correlation: %{z:,.3f}" +
                                "<extra></extra>")
@@ -288,14 +274,9 @@ elif navigation == "Exploratory Analysis":
         fig_scatter.update_layout(
             xaxis_title="Mileage",
             yaxis_title="Price ($)", hoverlabel = dict(font_color="black"), legend = dict(
-                title = "Fuel Type",
-                font = dict(color="black"),
-                title_font = dict (color="black")
+                title = "Fuel Type"
             )
         )
-
-        fig_scatter.update_xaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
-        fig_scatter.update_yaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
 
         fig_scatter.update_traces(hovertemplate = "<b> Price vs. Mileage</b><br>" + 
                                   "Price: <b> $%{y:,.0f}</b><br>" + 
@@ -315,8 +296,7 @@ elif navigation == "Exploratory Analysis":
             font = dict(color="black"),
             title_font = dict(color="black")
         ))
-        fig_box.update_xaxes(title_font = dict(color="black"), tickfont= dict(color="black"))
-        fig_box.update_yaxes(title_font = dict(color="black"), tickfont= dict(color="black"))
+
 
         st.plotly_chart(fig_box, use_container_width=True)
 ##########################################################################################################
@@ -624,16 +604,12 @@ The model provides a straightforward way to understand how different vehicle cha
     
         feat_imp_rf = px.bar(importances_rf, x = "Importance", y="Features", title ="Feature Importance - Random Forest",
                                    color = "Importance", color_continuous_scale= px.colors.sequential.Blues)
-        feat_imp_rf.update_layout(title_x = 0.4, coloraxis_colorbar=dict(# for the color legend custom
-                        title_font=dict(color="black"),
-                        tickfont=dict(color="black")
+        feat_imp_rf.update_layout(title_x = 0.4
                     ),
                     hoverlabel= dict(bgcolor="white", font_color="black")) # custom tooltip 
         feat_imp_rf.update_traces(marker_line_color = "black", marker_line_width = 1.2, 
                                        hovertemplate = "<b>%{y}</b><br>" +
                                        "Importance Score: <b>%{x:,.2f}</b>")
-        feat_imp_rf.update_xaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
-        feat_imp_rf.update_yaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
     
     
         st.plotly_chart(feat_imp_rf, use_container_width=True)    
@@ -737,8 +713,8 @@ Because of its ability to learn from errors, XGBoost often produces highly accur
         feat_imp_xgb.update_traces(marker_line_color = "black", marker_line_width = 1.2, 
                                    hovertemplate = "<b>%{y}</b><br>" +
                                    "Importance Score: <b>%{x:,.2f}</b>")
-        feat_imp_xgb.update_xaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
-        feat_imp_xgb.update_yaxes(tickfont = dict(color="black"), title_font = dict(color="black"))
+
+        
         st.plotly_chart(feat_imp_xgb, use_container_width=True)
 
     # Model comparison table
